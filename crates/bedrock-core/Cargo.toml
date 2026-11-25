@@ -1,0 +1,12 @@
+[package]
+name = "bedrock-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+bedrock-types.workspace = true
+async-trait.workspace = true
+futures.workspace = true
+bytes.workspace = true
+http.workspace = true
+thiserror.workspace = true

@@ -1,0 +1,16 @@
+[package]
+name = "bedrock-backends"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+bedrock-types.workspace = true
+bedrock-core.workspace = true
+async-trait.workspace = true
+futures.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+serde_yaml.workspace = true
+regex.workspace = true
+thiserror.workspace = true
+tracing.workspace = true

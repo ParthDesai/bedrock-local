@@ -1,0 +1,50 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/bedrock-types",
+    "crates/bedrock-core",
+    "crates/bedrock-backends",
+    "crates/bedrock-server",
+    "crates/bedrock-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["Parth Desai <desaiparth08@gmail.com>"]
+
+[workspace.dependencies]
+# Async runtime & streams
+tokio = { version = "1.40", features = ["full"] }
+futures = "0.3"
+async-trait = "0.1"
+bytes = "1.7"
+
+# HTTP & Middleware (Axum + Tower)
+axum = { version = "0.7", features = ["macros", "json"] }
+tower = { version = "0.5", features = ["util", "timeout", "limit"] }
+tower-http = { version = "0.6", features = ["trace", "cors", "request-id"] }
+http = "1.1"
+
+# Serialization & Config
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+
+# Error handling, IDs, Regex & CLI
+thiserror = "1.0"
+anyhow = "1.0"
+uuid = { version = "1.10", features = ["v4", "serde"] }
+regex = "1.10"
+clap = { version = "4.5", features = ["derive", "env"] }
+
+# Observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+
+# Internal workspace crates
+bedrock-types = { path = "crates/bedrock-types" }
+bedrock-core = { path = "crates/bedrock-core" }
+bedrock-backends = { path = "crates/bedrock-backends" }
+bedrock-server = { path = "crates/bedrock-server" }
